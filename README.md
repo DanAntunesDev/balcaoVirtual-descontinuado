@@ -17,9 +17,7 @@ O runtime principal do projeto está concentrado em:
 - `usuarios/`
 - `frontend/`
 
-Existem diretórios e arquivos legados no snapshot do projeto, principalmente código antigo de templates Django, seeds antigas, artefatos de ambiente local e listagens exportadas da árvore de arquivos. Eles não representam o contrato principal da aplicação e precisam ser tratados como limpeza de publicação.
-
-## Stack identificada
+## Stack
 
 ### Backend
 
