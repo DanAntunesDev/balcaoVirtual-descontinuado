@@ -1,0 +1,26 @@
+.auth-perspective {
+  perspective: 1200px;
+}
+
+.auth-card {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  min-height: 700px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.auth-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.auth-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+.auth-face.back {
+  transform: rotateY(180deg);
+}

@@ -1,0 +1,64 @@
+@media screen and (max-width: 767px) {
+
+    .cart-catalog-content>.start-call-container h3{
+        margin-top: 1rem;
+    }
+
+    #content-login>.container-buttons {
+        width: 356px;
+    }
+
+    .form-login {
+        width: 352px;
+    }
+
+    .header-container #button-voltar {
+        display: none;
+    }
+
+    .cart-catalog-content>.start-call-container {
+        display: grid;
+        padding: 0 0px;
+        grid-template-columns: none;
+        gap: 20px;
+    }
+
+    .card-container {
+        padding: 5px;
+    }
+
+    .marcar-atendimento {
+        width: 89%;
+    }
+
+    .cart-catalog-content>.start-call-container .call-item {
+        grid-template-columns: 100px 62%;
+    }
+
+    .forms_marcar_atendimento {
+        display: block;
+    }
+
+    .modal-content-atendimento {
+        min-width: 97%;
+    }
+
+    #root {
+        height: auto;
+    }
+
+    .forms_marcar_atendimento .grid {
+        margin: 1rem 0 1rem 0;
+    }
+
+    .cart-catalog-content>.grid-container {
+        display: grid;
+        padding: 0;
+        margin: auto;
+        padding-bottom: 2rem;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, 350px);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1439px) {}

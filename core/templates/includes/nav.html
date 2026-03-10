@@ -1,0 +1,22 @@
+<div class="header-container">
+  <div class="header-text">
+    {% if txt_1 %}
+    <h3><b>{{ txt_1 }}</b></h3>
+    {% endif %} {% if txt_2 %}
+    <h6><b>{{ txt_2 }}</b></h6>
+    {% endif %}
+  </div>
+
+  <div class="header-buttons">
+    {% if link_back %}
+
+    <a href="{% url link_back %}" id="button-voltar" class="hover">
+      <span>Voltar</span>
+    </a>
+    {% endif %}
+
+    <a href="{% url "usuarios:account_logout" %}" id="button-logout" class="hover">
+      <span><i class="ph-bold ph-sign-out"></i></span>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Django / Python runtime
+*.log
+db.sqlite3
+db.sqlite3-journal
+media/
+staticfiles/
+core/media/
+core/staticfiles/
+
+# Coverage / pytest
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Node
+node_modules/
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.*
+frontend/.env
+frontend/.env.*
+!.env.example
+!frontend/.env.example
+
+# Uploaded documents / local exports
+agendamentos/documentos/
+*.zip
+*.tar
+*.tar.gz
+*.rar
+
+# Local diagnostics / tree dumps
+__background_hits.txt
+__configs_found.txt
+__tree.txt
+estrutura.txt
+estrutura_src.txt
+frontend/estrutura_front.txt
+frontend/estrutura_src.txt
+frontend/componentes.txt
+
+# Misc
+.cache/
+tmp/

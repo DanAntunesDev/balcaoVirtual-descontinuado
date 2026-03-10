@@ -1,0 +1,152 @@
+/* ===== VARIAÇÕES ===== */
+
+.notification--info {
+  --bg: #F0FBFE;
+  --primary: #0EA1E7;
+}
+
+.notification--finalised {
+  --bg: #F7F6FB;
+  --primary: #9077DF;
+}
+
+.notification--failure {
+  --bg: #FFF1F6;
+  --primary: #C43060;
+}
+
+.notification--warning {
+  --bg: #FFF9EB;
+  --primary: #d6a024;
+}
+
+.notification--success {
+  --bg: #ECFBF2;
+  --primary: #335D48;
+}
+
+/* ===== TOAST CLEAN (SEM CARD) ===== */
+
+.notification {
+  position: relative;
+  min-width: 22rem;
+  max-width: 26rem;
+
+  background: var(--bg);
+  color: var(--primary);
+
+  overflow: hidden;
+
+  margin: 0.5rem auto;
+  pointer-events: auto;
+
+  border-radius: 0.3rem;
+
+  transform: translateY(1.5rem);
+  opacity: 0;
+  visibility: hidden;
+  animation: fade-in 3s linear;
+}
+
+/* ===== FAIXA LATERAL ===== */
+
+.notification::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 0.35rem;
+  height: 100%;
+
+  background: var(--primary);
+}
+
+/* ===== CONTEÚDO ===== */
+
+.notification__body {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  padding: 1rem 1rem 1rem 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.notification__message {
+  color: var(--primary);
+}
+
+/* ===== BARRA DE PROGRESSO ===== */
+
+.notification__progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 0.2rem;
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  background: linear-gradient(
+    to right,
+    var(--bg),
+    var(--primary)
+  );
+
+  animation: progress 2.5s 0.3s linear;
+}
+
+/* ===== ANIMAÇÕES ===== */
+
+@keyframes fade-in {
+  5% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  95% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progress {
+  to {
+    transform: scaleX(1);
+  }
+}
+/* ================================
+   OVERRIDE DO WRAPPER DO SONNER
+   ================================ */
+
+[data-sonner-toast] {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Remove qualquer pseudo-card interno */
+[data-sonner-toast]::before {
+  display: none !important;
+}
+
+[data-sonner-toast][data-type="success"] {
+  @apply notification--success;
+}
+
+[data-sonner-toast][data-type="error"] {
+  @apply notification--failure;
+}
+
+[data-sonner-toast][data-type="warning"] {
+  @apply notification--warning;
+}
+
+[data-sonner-toast][data-type="info"] {
+  @apply notification--info;
+}

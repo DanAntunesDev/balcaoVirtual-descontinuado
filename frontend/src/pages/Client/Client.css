@@ -1,0 +1,229 @@
+/* ================= LAYOUT BASE ================= */
+
+.client-root {
+  min-height: 100vh;
+}
+
+.client-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* IGUAL AO PUBLIC */
+.client-layout-limit {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.client-container {
+  width: min(1200px, calc(100% - 48px));
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+
+/* ================= SEARCH ================= */
+
+.client-search-wrap {
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+.client-searchbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  transition: all 0.2s ease;
+}
+
+.client-searchbar:focus-within {
+  border-color: var(--accent-1);
+  box-shadow: 0 0 0 3px rgba(127, 19, 236, 0.15);
+}
+
+.client-searchbar span {
+  font-size: 18px;
+  color: var(--text-sub);
+}
+
+.client-searchbar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 14px;
+  color: var(--text-main);
+}
+
+/* ================= GRID ================= */
+
+.client-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ================= CARD ================= */
+
+.client-cartorio-card {
+  background: var(--card-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 300px;
+  transition: box-shadow 0.2s ease, font-size 0.25s ease;
+}
+
+.client-cartorio-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.client-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.client-icon-badge {
+  width: 56px;
+  height: 56px;
+  background: var(--input-bg);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-icon-badge span {
+  font-size: 28px;
+  color: var(--accent-1);
+}
+
+/* STATUS */
+
+.client-status-pill {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.client-status-open {
+  background: rgba(34, 197, 94, 0.15);
+  color: #15803d;
+}
+
+.client-status-closed {
+  background: rgba(148, 163, 184, 0.20);
+  color: var(--text-sub);
+}
+
+/* CARD BODY */
+
+.client-card-body h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: var(--text-main);
+}
+
+.client-meta {
+  font-size: 0.875rem;
+  color: var(--text-sub);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.client-meta .material-symbols-outlined {
+  font-size: 1.125rem;
+}
+
+.client-small {
+  font-size: 0.75rem;
+  margin-top: 6px;
+  color: var(--text-sub);
+}
+
+/* ================= BUTTONS ================= */
+
+.client-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.client-btn-primary {
+  background: var(--accent-1);
+  color: #fff;
+  border: none;
+  height: 42px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.client-btn-primary:hover {
+  opacity: 0.9;
+}
+
+.client-btn-secondary {
+  background: transparent;
+  border: 1px solid var(--input-border);
+  height: 42px;
+  border-radius: 12px;
+  font-weight: 700;
+  color: var(--text-main);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.client-btn-secondary:hover {
+  background: var(--input-bg);
+}
+
+/* ================= LOAD MORE ================= */
+
+.client-loadmore-wrap {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.client-btn-loadmore {
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 1px solid var(--input-border);
+  background: rgba(0, 0, 0, 0.04);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-main);
+  transition: all 0.2s ease;
+}
+
+[data-theme="dark"] .client-btn-loadmore {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.client-btn-loadmore:hover {
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  border-color: transparent;
+}
