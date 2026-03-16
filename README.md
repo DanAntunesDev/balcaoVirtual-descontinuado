@@ -1,124 +1,141 @@
-# Balcão Virtual
+# Balcão Virtual (Projeto Descontinuado)
 
-Repositório de um sistema de atendimento e agendamento para cartórios, com backend em Django REST Framework e frontend em React/Vite.
+Plataforma de atendimento e agendamento desenvolvida para cartórios, permitindo organizar solicitações, documentos e horários de atendimento de forma estruturada.
 
-Este projeto foi descontinuado antes de uma consolidação final. O objetivo deste repositório é documentar de forma honesta o estado funcional alcançado e preservar a evolução técnica do código. A base principal que permanece válida hoje é:
+Este repositório representa um **snapshot técnico de um projeto real**, mantido como parte do meu portfólio para demonstrar experiência prática em desenvolvimento backend e arquitetura de sistemas.
 
-- API Django para autenticação, usuários, cartórios, agendamentos, documentos, auditoria e dashboards
-- Frontend React/Vite para fluxo público, autenticação, área do cliente e área administrativa inicial
-- Serviços de notificação por e-mail e tarefas assíncronas relacionadas a agendamento e validação de documentos
+O projeto foi posteriormente descontinuado, mas o código permanece público para fins de estudo e análise técnica.
 
-## Estado atual
+---
 
-O runtime principal do projeto está concentrado em:
+# Objetivo do projeto
 
-- `core/`
-- `app/`
-- `usuarios/`
-- `frontend/`
+O objetivo da plataforma era digitalizar e organizar o fluxo de atendimento de cartórios, permitindo:
 
-## Stack
+- gerenciamento de solicitações
+- controle de documentos
+- agendamentos de atendimento
+- autenticação de usuários
+- organização das permissões do sistema
 
-### Backend
+---
 
-- Python 3.12+
+# Tecnologias utilizadas
+
+Backend:
+
+- Python
 - Django
 - Django REST Framework
-- SimpleJWT
+- JWT Authentication
 - Celery
-- Redis
-- WeasyPrint
-- pytest
 
-### Frontend
+Infraestrutura:
 
-- React
-- Vite
-- React Router
-- Axios
-- Tailwind CSS
-- Sonner
-- Framer Motion
+- Docker
+- Docker Compose
 
-## Estrutura principal
+Arquitetura:
 
-```text
-.
-├── app/         # domínio de cartórios, agendamentos, documentos, dashboards e auditoria
-├── core/        # configuração Django, URLs e bootstrap
-├── usuarios/    # autenticação, perfil, permissões e recuperação de senha
-├── frontend/    # SPA React/Vite
-├── Dockerfile
-├── docker-compose.yml
-└── requirements.txt
-```
+- separação por módulos
+- sistema de permissões
+- workers assíncronos
+- organização de serviços backend
 
-## Requisitos
+---
 
-- Python 3.12+
-- Node.js 22+
-- npm 10+
-- Redis, caso queira testar Celery fora do modo síncrono
-- PostgreSQL apenas se optar por usar banco externo; o projeto também suporta SQLite para desenvolvimento local
+# Principais funcionalidades
 
-## Backend
+O sistema foi desenvolvido para suportar:
 
-Para rodar o backend localmente, o projeto usa `requirements.txt`, variáveis de ambiente em `.env` e migrações Django padrão.
+- cadastro e autenticação de usuários
+- controle de permissões
+- gerenciamento de solicitações
+- envio e reenvio de documentos
+- agendamentos
+- processamento assíncrono de tarefas
 
-Fluxo esperado de setup local:
+---
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate
-python -m pip install -r requirements.txt
-copy .env.example .env
-python manage.py migrate
-python manage.py runserver
-```
+# Estrutura do projeto
 
-A API local fica disponível em:
+O backend segue a estrutura típica de aplicações Django organizadas por módulos:
+app/
+models.py
+admin.py
+permissions/
+forms/
+migrations/
 
-- `http://127.0.0.1:8000/api/`
+core/
+configurações do projeto
 
-Healthcheck:
+workers/
+tarefas assíncronas com Celery
 
-- `http://127.0.0.1:8000/api/ping/`
+Dockerfile
+docker-compose
+.env.example
 
-## Frontend
 
-O frontend está dentro de `frontend/` e depende do backend Django disponível em `/api`.
+Essa organização permite separar responsabilidades e facilita a manutenção da aplicação.
 
-Fluxo esperado de setup local:
+---
 
-```bash
-cd frontend
-copy .env.example .env
-npm install
-npm run dev
-```
+# Arquitetura aplicada
 
-Por padrão, a base local esperada é:
+O sistema utiliza alguns conceitos importantes de arquitetura backend:
 
-- `http://127.0.0.1:8000/api`
+- separação entre regras de negócio e infraestrutura
+- controle de acesso via permissões
+- tarefas assíncronas utilizando Celery
+- autenticação baseada em JWT
+- containerização da aplicação com Docker
 
-## Docker
+Essas decisões foram tomadas para tornar o sistema mais escalável e organizado.
 
-O `Dockerfile` e o `docker-compose.yml` deste repositório estão preparados apenas para o backend e o worker Celery. O frontend continua com fluxo próprio via Vite.
+---
 
-Subida local do backend com Redis:
+# Como executar o projeto
 
-```bash
-docker compose up --build
-```
+Pré-requisitos:
 
-## Observações importantes para publicação
+- Python
+- Docker
+- Docker Compose
 
-- Não publique `.env`, bancos locais, `node_modules`, `venv`, artefatos de cobertura e dumps de árvore
-- Há código legado no repositório que não representa o runtime principal atual
-- A publicação pública ideal deve manter apenas o que participa do backend atual, do frontend atual e da documentação coerente com isso
-- O projeto não deve ser apresentado como sistema finalizado em produção
-- O estado correto é de base funcional avançada, porém descontinuada antes do acabamento final
+Clone o repositório:
+git clone https://github.com/DanAntunesDev/balcaoVirtual-descontinuado
 
-## Licença
+Execute o ambiente: 
+docker compose up
 
-Defina a licença no momento da publicação pública. Este snapshot não inclui licença consolidada.
+
+Ou rode manualmente o backend Django após configurar as variáveis de ambiente presentes no `.env.example`.
+
+---
+
+# Status do projeto
+
+Projeto descontinuado.
+
+O código permanece público como demonstração técnica de arquitetura backend e organização de um sistema real.
+
+---
+
+# Aprendizados
+
+Durante o desenvolvimento deste projeto foram trabalhados conceitos importantes como:
+
+- arquitetura de aplicações backend
+- organização de projetos Django
+- autenticação com JWT
+- filas e tarefas assíncronas com Celery
+- containerização com Docker
+- estruturação de sistemas de agendamento
+
+---
+
+# Autor
+
+Daniel Antunes
