@@ -8,7 +8,7 @@ O projeto foi posteriormente descontinuado, mas o código permanece público par
 
 ---
 
-# Objetivo do projeto
+## Objetivo do projeto
 
 O objetivo da plataforma era digitalizar e organizar o fluxo de atendimento de cartórios, permitindo:
 
@@ -20,9 +20,9 @@ O objetivo da plataforma era digitalizar e organizar o fluxo de atendimento de c
 
 ---
 
-# Tecnologias utilizadas
+## Tecnologias utilizadas
 
-Backend:
+### Backend
 
 - Python
 - Django
@@ -30,21 +30,14 @@ Backend:
 - JWT Authentication
 - Celery
 
-Infraestrutura:
+### Infraestrutura
 
 - Docker
 - Docker Compose
 
-Arquitetura:
-
-- separação por módulos
-- sistema de permissões
-- workers assíncronos
-- organização de serviços backend
-
 ---
 
-# Principais funcionalidades
+## Principais funcionalidades
 
 O sistema foi desenvolvido para suportar:
 
@@ -57,15 +50,17 @@ O sistema foi desenvolvido para suportar:
 
 ---
 
-# Estrutura do projeto
+## Estrutura do projeto
 
 O backend segue a estrutura típica de aplicações Django organizadas por módulos:
+
+```
 app/
-models.py
-admin.py
-permissions/
-forms/
-migrations/
+  models.py
+  admin.py
+  permissions/
+  forms/
+  migrations/
 
 core/
 configurações do projeto
@@ -76,13 +71,13 @@ tarefas assíncronas com Celery
 Dockerfile
 docker-compose
 .env.example
-
+```
 
 Essa organização permite separar responsabilidades e facilita a manutenção da aplicação.
 
 ---
 
-# Arquitetura aplicada
+## Arquitetura aplicada
 
 O sistema utiliza alguns conceitos importantes de arquitetura backend:
 
@@ -96,26 +91,25 @@ Essas decisões foram tomadas para tornar o sistema mais escalável e organizado
 
 ---
 
-# Como executar o projeto
-
-Pré-requisitos:
-
-- Python
-- Docker
-- Docker Compose
+## Como executar o projeto
 
 Clone o repositório:
+
+```bash
 git clone https://github.com/DanAntunesDev/balcaoVirtual-descontinuado
+```
 
-Execute o ambiente: 
+Execute o ambiente:
+
+```bash
 docker compose up
-
+```
 
 Ou rode manualmente o backend Django após configurar as variáveis de ambiente presentes no `.env.example`.
 
 ---
 
-# Status do projeto
+## Status do projeto
 
 Projeto descontinuado.
 
@@ -123,7 +117,7 @@ O código permanece público como demonstração técnica de arquitetura backend
 
 ---
 
-# Aprendizados
+## Aprendizados
 
 Durante o desenvolvimento deste projeto foram trabalhados conceitos importantes como:
 
@@ -136,6 +130,6 @@ Durante o desenvolvimento deste projeto foram trabalhados conceitos importantes 
 
 ---
 
-# Autor
+## Autor
 
 Daniel Antunes
